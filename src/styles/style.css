@@ -1,0 +1,87 @@
+:root {
+  color-scheme: light;
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --app-bg: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+  --text: #0f172a;
+  --muted: #475569;
+  --btn-bg: #ffffff;
+  --btn-text: #0f172a;
+  --btn-border: #cfd8e3;
+  --btn-shadow: rgba(15,23,42,0.06);
+  --panel-bg: #ffffff;
+  --panel-outline: #cfd8e3;
+  --panel-shadow: rgba(15,23,42,0.08);
+  --accent: #2b6cb0;
+  --accent-text: #ffffff;
+  --icon-bg: #e2e8f0;
+  --icon-color: #0f172a;
+  --timer-bg: #f1f5f9;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --app-bg: #111317;
+  --text: #e6e7eb;
+  --muted: #a0a7b2;
+  --btn-bg: #16181f;
+  --btn-text: #e6e7eb;
+  --btn-border: #24272f;
+  --btn-shadow: rgba(0,0,0,0.45);
+  --panel-bg: #12141a;
+  --panel-outline: #20232b;
+  --panel-shadow: rgba(0,0,0,0.55);
+  --accent: #e7c26a;
+  --accent-text: #14161b;
+  --icon-bg: #20242c;
+  --icon-color: #e6e7eb;  /* light text for dark mode */
+  --timer-bg: #181b21;
+}
+
+body {
+  margin: 0;
+  background: var(--app-bg);
+  color: var(--text);
+  font-family: var(--font-main);
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* center vertically with top row + panel */
+  gap: 16px;
+  padding: 16px 16px 32px;
+  box-sizing: border-box;
+}
+
+/* theme transition applied globally */
+.theme-transition,
+.theme-transition * {
+  transition: background-color 220ms ease,
+              color 220ms ease,
+              border-color 220ms ease,
+              box-shadow 220ms ease;
+}
+
+/* Unify panel corner radius */
+.leaderboard-panel__surface,
+.error-panel__surface,
+.welcome-panel__surface,
+.main-panel__surface,
+.options-panel__surface {
+  border-radius: 16px;
+}

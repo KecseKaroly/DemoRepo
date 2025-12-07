@@ -1,0 +1,52 @@
+/* Question panel styled like answer buttons, width matching answer grid */
+
+.question-panel {
+  width: 100%;
+  padding: 24px 20px;
+  border-radius: 14px;
+  border: 2px solid var(--btn-border);
+  background: var(--btn-bg);
+  box-shadow: 0 8px 24px var(--btn-shadow);
+  animation: question-appear 280ms cubic-bezier(.2,.9,.3,1) both;
+  transition: box-shadow 200ms ease;
+  box-sizing: border-box;
+}
+
+/* entrance animation */
+@keyframes question-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* question text */
+.question-panel__text {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: var(--font-main);
+  color: var(--text);
+  line-height: 1.4;
+  text-align: center;
+  letter-spacing: -0.3px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+
+
+/* responsive */
+@media (max-width: 720px) {
+  .question-panel {
+    width: 100%;
+    padding: 20px 16px;
+  }
+  .question-panel__text {
+    font-size: 1.1rem;
+  }
+}

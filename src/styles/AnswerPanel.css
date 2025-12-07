@@ -1,0 +1,41 @@
+@import './AnswerButton.css';
+
+:root{
+  --gap: 24px;
+}
+
+/* grid: 2 columns by default (2x2 for 4 answers, 1x2 for 2 answers) */
+.answer-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* if there's only one answer, make it span both columns and center it */
+.answer-list > li:only-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* item */
+.answer-item { 
+  margin: 0; 
+}
+
+/* responsive: single column on narrow screens */
+@media (max-width: 520px) {
+  .answer-list { 
+    grid-template-columns: 1fr; 
+  }
+  .answer-list > li:only-child { 
+    grid-column: auto; 
+  }
+}
+
