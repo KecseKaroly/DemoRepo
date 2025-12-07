@@ -1,11 +1,15 @@
 {
+  "name": "DemoRepo",
+  "version": "5.0.0",
   "private": true,
-  "homepage": "https://nandibme.github.io/Quiz-game/",
+  "homepage": "https://kecsekaroly.github.io/DemoRepo/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "start": "react-scripts start"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -17,10 +21,11 @@
   "devDependencies": {
     "@preact/preset-vite": "^2.10.2",
     "typescript": "^5.9.3",
-    "vite": "^7.0.4"
+    "vite": "^7.0.4",
+    "gh-pages": "^5.0.0"
   },
   "vite": {
-    "base": "/quiz-game/"
+    "base": "/demorepo/"
   },
   "plugins": [
     "@preactjs/preset-vite"
